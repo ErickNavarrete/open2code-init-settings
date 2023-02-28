@@ -1,0 +1,27 @@
+{
+    "name": "open-to-code/init-settings",
+    "description": "Inicializando proyecto",
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "OpenToCode\\InitSettings\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dylan Navarrete",
+            "email": "ericknavarrete55@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0|^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OpenToCode\\InitSettings\\Providers\\InitSettingsServiceProvider"
+            ]
+        }
+    }
+}

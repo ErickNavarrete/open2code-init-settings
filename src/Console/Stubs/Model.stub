@@ -1,0 +1,31 @@
+<?php
+
+/*
+ * CODE
+ * {{modelName}} Model Class
+ */
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * @access  public
+ *
+ * @version 1.0
+ */
+class {{modelName}} extends Model
+{
+    protected $fillable = [];
+
+    /**
+    * Function to return array rules in method create and update
+    *
+    * @return array
+    */
+    public static function rules(): array
+    {
+       $rule = [];
+
+       return $rule;
+    }
+}
