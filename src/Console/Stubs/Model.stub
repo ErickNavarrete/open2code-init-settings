@@ -6,14 +6,14 @@
  */
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use OpenToCode\InitSettings\Models\BaseModel;
 
 /**
  * @access  public
  *
  * @version 1.0
  */
-class {{modelName}} extends Model
+class {{modelName}} extends BaseModel
 {
     protected $fillable = [];
 

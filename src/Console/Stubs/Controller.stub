@@ -11,23 +11,31 @@ use Exception;
 use App\Models\{{modelName}};
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
 use Illuminate\Validation\ValidationException;
-use OpenToCode\InitSettings\Controller\ApiController;
+use OpenToCode\InitSettings\Traits\ApiResponseTrait;
 
 /**
  * @access  public
  *
  * @version 1.0
  */
-class {{modelName}}Controller extends ApiController
+class {{modelName}}Controller extends Controller
 {
+    use ApiResponseTrait;
 
     /**
+     * @param Request $request
+     *
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        ${{modelNamePluralLowerCase}} = {{modelName}}::all();
+        $search = $request->all();
+        unset($search['page']);
+        unset($search['search']);
+
+        ${{modelNamePluralLowerCase}} = {{modelName}}::filterLike($search)->paginate();
 
         return $this->showAll(${{modelNamePluralLowerCase}});
     }
